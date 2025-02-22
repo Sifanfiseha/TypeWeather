@@ -1,0 +1,148 @@
+/* Custom Proprties */
+:root {
+  /* primary color*/
+  --blue-light: #8fb2f5;
+
+  /* secondary colors*/
+  --gray-900: #13131a;
+  --gray-800: #16161f;
+  --gray-700: #1c1c27;
+  --gray-600: #22222f;
+  --gray-500: #3b3b54;
+  --gray-400: #7f7f98;
+  --gray-300: #ababc4;
+  --gray-200: #bfbfd4;
+  --gray-100: #fafafa;
+  --white: #ffffff;
+
+  /* Typography */
+  --ff-nunito-sans: "Nunito", sans-serif;
+
+  /* font size */
+  --fs-xs: 0.75rem;
+  --fs-sm: 0.875rem;
+  --fs-base: 1rem;
+  --fs-lg: 1.125rem;
+  --fs-xl: 1.25rem;
+  --fs-2xl: 1.5rem;
+  --fs-3xl: 1.875rem;
+  --fs-4xl: 2.25rem;
+  --fs-5xl: 3rem;
+
+  /* font weaight */
+  --fw-regular: 400;
+  --fw-semibold: 600;
+
+  /* Box-shadow */
+  --shadow-1: 0 1px 3px hsla(0%, 0%, 0%. 0.5);
+  --shadow-2: 0 3px 6px hsla(0%, 0%, 0%. 0.4);
+
+  /* Border radius */
+  --radius-28: 28px;
+  --radius-16: 16px;
+  --radius-pill: 500px;
+  --radius-circle: 50%;
+
+  /* Transition */
+  --transition-short: 100ms ease;
+}
+
+/* reset */
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+
+body {
+  /* 3. Add accessible line-height */
+  line-height: 1.5;
+  /* 4. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 5. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 6. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 7. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 8. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+hmtl {
+  font-family: var(--ff-nunito-sans);
+  font-size: 10px;
+  scroll-behavior: smooth;
+}
+body {
+  background-color: var(--gray-800);
+  padding: 3rem;
+  font-family: var(--ff-nunito-sans);
+}
+html,
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+h1 {
+  color: var(--gray-100);
+}
+h1 span {
+  color: var(--blue-light);
+}
+main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+h3 {
+  color: var(--gray-200);
+}
