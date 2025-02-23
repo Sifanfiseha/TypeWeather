@@ -37,11 +37,21 @@
   </head>
   <body>
     <header>
-      <img src="./assets/image/logo/logo.svg" alt="TypeWeather" />
+      <img class="logo" src="./assets/image/logo/logo.svg" alt="TypeWeather" />
     </header>
     <main>
-      <h1>Welcome to <span>TypeWeather</span></h1>
-      <h3>Choose a location to see the weather forecast Search location</h3>
+      <div class="description">
+        <h1>Welcome to <span>TypeWeather</span></h1>
+        <h3>Choose a location to see the weather forecast</h3>
+      </div>
+      <form action="">
+        <input type="text" placeholder="Search a location" />
+        <img
+          class="loading hide"
+          src="assets/font/Animation - 1740281726244.gif"
+          alt="loading Animation"
+        />
+      </form>
     </main>
   </body>
 </html>
