@@ -202,7 +202,12 @@ ul li span {
   display: none;
 }
 .day {
+  /* display: grid;
+  grid-template-rows: 1fr 1fr 1fr; */
   display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .lp {
   display: flex;
