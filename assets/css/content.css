@@ -1,0 +1,239 @@
+/* Custom Proprties */
+:root {
+  /* primary color*/
+  --blue-light: #8fb2f5;
+
+  /* secondary colors*/
+  --gray-900: #13131a;
+  --gray-800: #16161f;
+  --gray-700: #1c1c27;
+  --gray-600: #22222f;
+  --gray-500: #3b3b54;
+  --gray-400: #7f7f98;
+  --gray-300: #ababc4;
+  --gray-200: #bfbfd4;
+  --gray-100: #fafafa;
+  --white: #ffffff;
+
+  /* Typography */
+  --ff-nunito-sans: "Nunito", sans-serif;
+
+  /* font size */
+  --fs-xs: 0.75rem;
+  --fs-sm: 0.875rem;
+  --fs-base: 1rem;
+  --fs-lg: 1.125rem;
+  --fs-xl: 1.25rem;
+  --fs-2xl: 1.5rem;
+  --fs-3xl: 1.875rem;
+  --fs-4xl: 2.25rem;
+  --fs-5xl: 3rem;
+
+  /* font weaight */
+  --fw-regular: 400;
+  --fw-semibold: 600;
+
+  /* Box-shadow */
+  --shadow-1: 0 1px 3px hsla(0%, 0%, 0%. 0.5);
+  --shadow-2: 0 3px 6px hsla(0%, 0%, 0%. 0.4);
+
+  /* Transition */
+  --transition-short: 100ms ease;
+}
+/* -------------------- */
+body {
+  height: 100%;
+  padding: 0;
+}
+main {
+  display: grid;
+  height: 100vh;
+  gap: 1rem;
+  grid-template-columns: 1fr 1fr;
+  padding: 2rem;
+}
+main > section {
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+.todays-details {
+  background-color: var(--gray-800);
+  grid-row: span 2;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+}
+.full-detail {
+  background-color: var(--gray-800);
+}
+.week-detail {
+  background-color: var(--gray-800);
+}
+.search {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.form-input {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background-color: var(--gray-600);
+  border-radius: 8px;
+  padding: 0.6rem;
+}
+.form-input input {
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  /* padding: 0.8rem; */
+  color: var(--gray-100);
+}
+.form-input input:placeholder {
+  color: var(--gray-300);
+}
+.logo {
+  background-color: var(--gray-600);
+  height: 50px;
+  width: 55px;
+  border-radius: 8px;
+  padding: 0.3rem;
+}
+.main-content {
+  width: 100%;
+  height: 100%;
+  background-image: url("../image/bg/Weather=Few\ Clouds\,\ Moment=Night.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: var(--gray-100);
+  border-radius: 8px;
+  padding: 2rem 0rem 0 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.country,
+.time {
+  font-size: var(--fs-2xl);
+  font-weight: var(--fw-semibold);
+}
+.country-co {
+  font-size: var(--fs-base);
+}
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding-right: 2rem;
+}
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.temperature {
+  font-size: 5rem;
+  font-weight: bolder;
+}
+.temp-detail {
+  font-size: var(--fs-lg);
+  font-weight: bolder;
+}
+.weather-icon {
+  width: 15rem;
+  display: block;
+}
+.section-title {
+  font-size: var(--fs-xl);
+  color: var(--gray-400);
+}
+ul {
+  padding: 1rem 0;
+}
+ul li {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--gray-200);
+  font-size: var(--fs-lg);
+  border-bottom: 1px solid #22222f;
+  padding: 1rem;
+}
+ul li div img {
+  opacity: 0.2;
+}
+ul li div {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+ul li img {
+  display: block;
+}
+ul li span {
+  color: var(--gray-100);
+  font-weight: var(--fw-semibold);
+}
+.container {
+  display: flex;
+  color: var(--gray-200);
+}
+.day {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.temp {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+@media (max-width: 700px) {
+  main {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+    min-height: 100vh;
+  }
+  body {
+    min-height: 100vh;
+    background-repeat: repeat;
+    padding-bottom: 1rem;
+  }
+  .todays-details {
+    padding: 0;
+  }
+  .country,
+  .time {
+    font-size: var(--fs-lg);
+    font-weight: var(--fw-semibold);
+  }
+  .country-co {
+    font-size: var(--fs-xs);
+  }
+  .main-content {
+    padding: 0.8rem 0 0.8rem 0.8rem;
+    height: 350px;
+  }
+  .temperature {
+    font-size: 3rem;
+  }
+  .top {
+    padding-right: 0.8rem;
+  }
+  .temp {
+    flex-direction: column;
+  }
+  .weather-stat {
+    display: none;
+  }
+}
+main {
+  padding: 2rem;
+}

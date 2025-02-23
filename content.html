@@ -3,9 +3,192 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- 
+     - Primary meta tags
+    -->
+    <title>TypeWeather</title>
+    <meta name="title" content="TypeWeather" />
+    <meta
+      name="description"
+      content="Get real-time weather updates for any city. Check temperature, humidity, and weather conditions with a clean and responsive dashboard. Powered by OpenWeatherMap API."
+    />
+    <!-- 
+     - favicon
+    -->
+    <link rel="shortcut icon" href="favicon.svg" type="image/svg+xml" />
+    <!-- 
+     - google font link
+     -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+      rel="stylesheet"
+    />
+    <!-- 
+     - custom css links
+    -->
+    <link rel="stylesheet" href="assets/css/general.css" />
+    <link rel="stylesheet" href="assets/css/content.css" />
+    <!-- 
+     - custom js links
+    -->
+    <link rel="stylesheet" type="module" href="assets/js/app.js" />
+    <link rel="stylesheet" type="module" href="assets/js/route.js" />
   </head>
   <body>
-    <main></main>
+    <main>
+      <section class="todays-details">
+        <div class="search">
+          <a class="logo-link" href="./index.html">
+            <img
+              class="logo"
+              src="./assets/image/logo/Simbolo.svg"
+              alt="TypeWeather"
+          /></a>
+          <form class="form-input" action="">
+            <input type="text" placeholder="Search a location" />
+            <img
+              class="loading hide"
+              src="assets/font/Animation - 1740281726244.gif"
+              alt="loading Animation"
+            />
+          </form>
+        </div>
+        <div class="main-content">
+          <div class="top">
+            <div class="location">
+              <div class="place">
+                <p class="country">Porto Alegre, RS</p>
+                <p class="country-co">Segunda-feira, 15 de maio de 2023</p>
+              </div>
+            </div>
+            <div class="time">02:30</div>
+          </div>
+          <div class="bottom">
+            <div class="temp-information">
+              <p class="temperature">28<sup>o</sup>c</p>
+              <p class="temp-detail">
+                28<sup>o</sup>c / 28<sup>o</sup>c Poucas nuvens
+              </p>
+            </div>
+            <img
+              class="weather-icon"
+              src="./assets/image/weather icon/Weather=Few clouds, Moment=Night.svg"
+              alt=""
+            />
+          </div>
+        </div>
+      </section>
+      <section class="full-detail">
+        <p class="section-title">Today's weather details</p>
+        <ul>
+          <li>
+            <div>
+              <img
+                class="details-icons"
+                src="./assets/image/details icons/Type=thermometer-simple-light.svg"
+                alt=""
+              />Temperature
+            </div>
+            <span>32<sup>o</sup>c</span>
+          </li>
+          <li>
+            <div>
+              <img
+                src="./assets/image/details icons/Type=cloud-rain-light.svg"
+                alt=""
+              />Chance of Rain
+            </div>
+            <span>0%</span>
+          </li>
+          <li>
+            <div>
+              <img
+                src="./assets/image/details icons/Type=wind-light.svg"
+                alt=""
+              />Wind Speed
+            </div>
+            <span>8 km/hr</span>
+          </li>
+          <li>
+            <div>
+              <img
+                src="./assets/image/details icons/Type=drop-light.svg"
+                alt=""
+              />
+              Humidity
+            </div>
+            <span>40%</span>
+          </li>
+          <li>
+            <div>
+              <img
+                src="./assets/image/details icons/Type=sun-dim-light.svg"
+                alt=""
+              />UV Index
+            </div>
+            <span>5</span>
+          </li>
+        </ul>
+      </section>
+      <section class="week-detail">
+        <p class="section-title">5-day weather</p>
+        <div class="container">
+          <!-- day 1 -->
+          <div class="day">
+            <p>today</p>
+            <img
+              src="./assets/image/weather icon/Weather=Few clouds, Moment=Day.svg"
+              alt=""
+            />
+            <p class="weather-stat">Few clouds</p>
+            <p>32<sup>o</sup>c <span>26<sup>o</sup>c</span></p>
+          </div>
+          <!-- day 1 -->
+          <div class="day">
+            <p>today</p>
+            <img
+              src="./assets/image/weather icon/Weather=Few clouds, Moment=Day.svg"
+              alt=""
+            />
+            <p class="weather-stat">Few clouds</p>
+            <p>32<sup>o</sup>c <span>26<sup>o</sup>c</span></p>
+          </div>
+          <!-- day 1 -->
+          <div class="day">
+            <p>today</p>
+            <img
+              src="./assets/image/weather icon/Weather=Few clouds, Moment=Day.svg"
+              alt=""
+            />
+            <p class="weather-stat">Few clouds</p>
+            <p>32<sup>o</sup>c <span>26<sup>o</sup>c</span></p>
+          </div>
+          <!-- day 1 -->
+          <div class="day">
+            <p>today</p>
+            <img
+              src="./assets/image/weather icon/Weather=Few clouds, Moment=Day.svg"
+              alt=""
+            />
+            <p class="weather-stat">Few clouds</p>
+            <p>32<sup>o</sup>c <span>26<sup>o</sup>c</span></p>
+          </div>
+          <!-- day 1 -->
+          <div class="day">
+            <p>today</p>
+            <img
+              src="./assets/image/weather icon/Weather=Few clouds, Moment=Day.svg"
+              alt=""
+            />
+            <p class="weather-stat">Few clouds</p>
+            <p>32<sup>o</sup>c <span>26<sup>o</sup>c</span></p>
+          </div>
+        </div>
+      </section>
+    </main>
   </body>
 </html>
