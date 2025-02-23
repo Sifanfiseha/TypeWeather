@@ -165,6 +165,9 @@ ul li {
   border-bottom: 1px solid #22222f;
   padding: 1rem;
 }
+.p-bottom {
+  padding-bottom: 0.8rem;
+}
 ul li div img {
   opacity: 0.2;
 }
@@ -194,6 +197,17 @@ ul li span {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+}
+.short {
+  display: none;
+}
+.day {
+  display: flex;
+}
+.lp {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 @media (max-width: 700px) {
   main {
@@ -233,7 +247,20 @@ ul li span {
   .weather-stat {
     display: none;
   }
+  .long {
+    display: none;
+  }
+  .short {
+    display: block;
+  }
+  .temp-detail {
+    font-size: var(--fs-base);
+  }
+  .bottom {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
 }
 main {
-  padding: 2rem;
+  padding: 0.8rem;
 }

@@ -125,3 +125,17 @@ body {
 .hide {
   opacity: 0;
 }
+/* For Webkit browsers (Chrome, Safari) */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* For Firefox */
+html {
+  scrollbar-width: none;
+}
+
+/* For Edge & IE */
+body {
+  -ms-overflow-style: none;
+}
