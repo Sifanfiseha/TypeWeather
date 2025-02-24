@@ -151,3 +151,32 @@ body {
   color: var(--gray-200);
   font-size: 24px;
 }
+
+.skeleton {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+  border-radius: 5px;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: -100% 0;
+  }
+}
+
+/* Apply skeleton styles to text and image placeholders */
+.skeleton-text {
+  width: 200px;
+  height: 20px;
+  margin: 10px 0;
+}
+
+.skeleton-box {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
