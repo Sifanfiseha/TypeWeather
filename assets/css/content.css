@@ -145,7 +145,7 @@ main > section {
   align-items: center;
 }
 .temperature {
-  font-size: 5rem;
+  font-size: 4rem;
   font-weight: bolder;
 }
 .temp-detail {
@@ -225,6 +225,9 @@ ul li span {
 .discription,
 .highLowTemp {
   font-size: 1.3rem;
+}
+.highLowTemp {
+  font-weight: var(--fw-semibold);
 }
 @media (max-width: 700px) {
   main {

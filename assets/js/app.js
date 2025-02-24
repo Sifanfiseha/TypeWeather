@@ -6,7 +6,12 @@ const searchInput = document.querySelector("#searchInput");
 const cityName = document.querySelector(".city-name");
 const discriptionEl = document.querySelector(".discription");
 const loadingEl = document.querySelector(".loading");
-
+const tempEl = document.querySelectorAll(".temp1");
+const chanceEl = document.querySelector(".chance");
+const windSpeedEl = document.querySelector(".wind-speed");
+const humidityEl = document.querySelector(".humidity");
+const uvIndexEl = document.querySelector(".uv-index");
+const highLowTempEl = document.querySelector(".highLowTemp");
 async function fetchWeather(city) {
   try {
     if (!city) throw new Error("city name is required");
@@ -19,13 +24,22 @@ async function fetchWeather(city) {
     }
     const data = await response.json();
     console.log(data);
-    cityName.innerText = `${data.name}, ${data.sys.country}`;
-    discriptionEl.innerText = data.weather[0].description;
+    displayCurrentWeather(data);
   } catch (error) {
     alert(error);
   } finally {
     loadingEl?.classList.add("hide");
   }
+}
+function displayCurrentWeather(data) {
+  cityName.innerText = `${data.name}, ${data.sys.country}`;
+  discriptionEl.innerText = data.weather[0].description;
+  tempEl.forEach((el) => {
+    el.innerHTML = `${data.main.temp.toFixed(1)}°C`;
+  });
+  highLowTempEl.textContent = `${data.main.temp_max}°C / ${data.main.temp_min}°C`;
+  humidityEl.innerText = `${data.main.humidity}%`;
+  windSpeedEl.innerText = `${data.wind.speed.toFixed(1)} Km/Hr`;
 }
 
 function searchWeather(e) {
