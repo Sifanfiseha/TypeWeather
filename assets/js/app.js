@@ -67,7 +67,7 @@ function init() {
         e.preventDefault();
         const city = searchInput.value.trim();
         if (city) {
-          window.location.href = `https://dynamic-axolotl-2be717.netlify.app/content.html?city=${city}`;
+          window.location.href = `/content.html?city=${city}`;
         } else {
           alert("please enter a city name!");
         }
