@@ -67,7 +67,9 @@ function init() {
         e.preventDefault();
         const city = searchInput.value.trim();
         if (city) {
-          window.location.href = `/content.html?city=${city}`;
+          window.location.assign(
+            `/content.html?city=${encodeURIComponent(city)}`
+          );
         } else {
           alert("please enter a city name!");
         }
