@@ -222,6 +222,10 @@ ul li span {
   align-items: center;
   flex-direction: column;
 }
+.discription,
+.highLowTemp {
+  font-size: 1.3rem;
+}
 @media (max-width: 700px) {
   main {
     grid-template-columns: 1fr;
@@ -280,6 +284,10 @@ ul li span {
   .date {
     font-size: 1.25rem;
     font-weight: var(--fw-semibold);
+  }
+  .discription,
+  .highLowTemp {
+    font-size: 1rem;
   }
 }
 main {
