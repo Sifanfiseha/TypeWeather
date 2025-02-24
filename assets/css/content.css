@@ -70,6 +70,14 @@ main > section {
 .week-detail {
   background-color: var(--gray-800);
 }
+.city-name {
+  font-size: 2rem;
+  font-weight: bold;
+}
+.date {
+  font-size: 1.5rem;
+  font-weight: var(--fw-semibold);
+}
 .search {
   display: flex;
   align-items: center;
@@ -264,6 +272,14 @@ ul li span {
   .bottom {
     display: grid;
     grid-template-columns: 1fr 1fr;
+  }
+  .city-name {
+    font-size: 1.75rem;
+    font-weight: bold;
+  }
+  .date {
+    font-size: 1.25rem;
+    font-weight: var(--fw-semibold);
   }
 }
 main {

@@ -33,12 +33,14 @@
     <!-- 
      - custom js links
     -->
-    <link rel="stylesheet" type="module" href="assets/js/app.js" />
-    <link rel="stylesheet" type="module" href="assets/js/route.js" />
+    <!-- <link rel="stylesheet" type="module" href="assets/js/app.js" />
+    <link rel="stylesheet" type="module" href="assets/js/route.js" /> -->
   </head>
   <body>
     <header>
-      <img class="logo" src="./assets/image/logo/logo.svg" alt="TypeWeather" />
+      <a href="./content.html"
+        ><img class="logo" src="./assets/image/logo/logo.svg" alt="TypeWeather"
+      /></a>
     </header>
     <main>
       <div class="description">
@@ -46,15 +48,32 @@
         <h3>Choose a location to see the weather forecast</h3>
       </div>
       <form action="">
-        <input type="text" id="searchInput" placeholder="Enter city name" />
+        <input
+          type="text"
+          id="searchInput"
+          autocomplete="off"
+          placeholder="Enter city name"
+        />
 
         <img
           class="loading hide"
           src="assets/font/Animation - 1740281726244.gif"
           alt="loading Animation"
         />
+        <button id="searchButton">
+          <ion-icon class="ion-icon" name="search-outline"></ion-icon>
+        </button>
       </form>
     </main>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    Basic usage
     <script src="assets/js/app.js"></script>
   </body>
 </html>

@@ -139,3 +139,15 @@ html {
 body {
   -ms-overflow-style: none;
 }
+#searchButton {
+  background-color: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.ion-icon {
+  color: var(--gray-200);
+  font-size: 24px;
+}
