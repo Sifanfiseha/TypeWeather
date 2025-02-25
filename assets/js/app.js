@@ -66,17 +66,19 @@ function init() {
       document.querySelector("form").addEventListener("submit", (e) => {
         e.preventDefault();
         const city = searchInput.value.trim();
-        if (city) {
-          window.location.assign(
-            `/content.html?city=${encodeURIComponent(city)}`
-          );
-        } else {
-          alert("please enter a city name!");
-        }
+        sessionStorage.setItem("city", city);
+        // if (city) {
+        //   window.location.assign(
+        //     `/content.html?city=${encodeURIComponent(city)}`
+        //   );
+        // } else {
+        //   alert("please enter a city name!");
+        // }
+        window.location.href = "content.html";
       });
       break;
     case "/content.html":
-      const city = getCityFromUrl();
+      const city = sessionStorage.getItem("city");
       fetchWeather(city);
       document.querySelector("form").addEventListener("submit", searchWeather);
   }
