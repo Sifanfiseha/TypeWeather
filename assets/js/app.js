@@ -79,6 +79,8 @@ function init() {
         // window.location.href = "content.html";
         link.href = `./content.html?city=${encodeURIComponent(city)}`;
         link.click();
+        console.log("working...");
+        console.log(city);
       });
       break;
     case "/content.html":
