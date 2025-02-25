@@ -16,7 +16,7 @@ const link = document.querySelector(".redirect-link");
 //         link.click();
 document.querySelector("form").addEventListener("submit", (e) => {
   e.preventDefault();
-  const city = searchInput.ariaValueMax;
+  const city = searchInput.value;
   link.href = `./content.html?city=${encodeURIComponent(city)}`;
   console.log(city);
 });
