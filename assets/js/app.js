@@ -12,6 +12,56 @@ const highLowTempEl = document.querySelector(".highLowTemp");
 const link = document.querySelector(".redirect-link");
 const dateEl = document.querySelector(".date");
 const timeEl = document.querySelector(".time");
+const weatherIconEl = document.querySelector(".weather-icon");
+// Custom icons mapping
+const iconMapping = {
+  "01d": "./assets/image/weather icon/clear-sky-day.svg",
+  "01n": "./assets/image/weather icon/clear-sky-night.svg",
+  "02d": "./assets/image/weather icon/few-clouds-day.svg",
+  "02n": "./assets/image/weather icon/few-clouds-night.svg",
+  "03d": "./assets/image/weather icon/scattered-clouds-day.svg",
+  "03n": "./assets/image/weather icon/scattered-clouds-night.svg",
+  "04d": "./assets/image/weather icon/scattered-clouds-day.svg",
+  "04n": "./assets/image/weather icon/scattered-clouds-night.svg",
+  "09d": "./assets/image/weather icon/shower-rain-day.svg",
+  "09n": "./assets/image/weather icon/shower-rain-night.svg",
+  "10d": "./assets/image/weather icon/shower-rain-day.svg",
+  "10n": "./assets/image/weather icon/shower-rain-night.svg",
+  "11d": "./assets/image/weather icon/thunderstorm-day.svg",
+  "11n": "./assets/image/weather icon/storm night.svg",
+  "13d": "./assets/image/weather icon/snow day.svg",
+  "13n": "./assets/image/weather icon/snow night.svg",
+  "50d": "./assets/image/weather icon/scattered-clouds-day.svg",
+  "50n": "./assets/image/weather icon/scattered-clouds-night.svg",
+};
+
+const bgMapping = {
+  "01d": "clear-sky-day.svg",
+  "01n": "few-clouds-night.svg",
+  "02d": "few-clouds-day.svg",
+  "02n": "few-clouds-night.svg",
+  "03d": "scattered-clouds-day.svg",
+  "03n": "scattered-clouds-night.svg",
+  "04d": "broken-clouds-day.svg",
+  "04n": "broken-clouds-night.svg",
+  "09d": "shower-rain-day.svg",
+  "09n": "shower-rain-night.svg",
+  "10d": "rain-day.svg",
+  "10n": "rain-night.svg",
+  "11d": "thunderstorm-day.svg",
+  "11n": "thunderstorm-night.svg",
+  "13d": "snow-day.svg",
+  "13n": "snow-night.svg",
+  "50d": "mist-day.svg",
+  "50n": "mist-night.svg",
+};
+function setWeatherBackground(iconCode) {
+  const bgImage = bgMapping[iconCode];
+  document.querySelector(
+    ".main-content"
+  ).style.backgroundImage = `url('./assets/image/bg/${bgImage}')`;
+}
+
 async function fetchWeather(city) {
   try {
     if (!city) throw new Error("city name is required");
@@ -53,7 +103,10 @@ async function fetch5DayWeather(city) {
 function displayForecast(data) {
   console.log(data);
   const week = document.querySelector(".container");
+  week.innerHTML = "";
   data.forEach((day) => {
+    const iconCode = day.weather[0].icon;
+    const iconUrl = iconMapping[iconCode];
     let dayName = getDayName(day.dt_txt);
     if (window.innerWidth <= 1000) {
       dayName = dayName.slice(0, 3);
@@ -65,7 +118,7 @@ function displayForecast(data) {
             <p class="long">${dayName}</p>
             <p class="short">mon</p>
             <img
-              src="./assets/image/weather icon/Weather=Few clouds, Moment=Day.svg"
+              src="${iconUrl}"
               alt=""
             />
             <p class="weather-stat">${day.weather[0].description}</p>
@@ -79,6 +132,10 @@ function displayForecast(data) {
 }
 
 function displayCurrentWeather(data) {
+  const iconCode = data.weather[0].icon;
+  const iconUrl = iconMapping[iconCode];
+  setWeatherBackground(iconCode);
+  weatherIconEl.src = iconUrl;
   const date = formatTimestamp(data.dt);
   const time = formatTime(data.dt);
   timeEl.innerText = time;
@@ -100,6 +157,7 @@ function searchWeather(e) {
   searchInput.value = "";
   if (city) {
     fetchWeather(city);
+    fetch5DayWeather(city);
   } else {
     alert("Please enter a city name");
   }
@@ -141,7 +199,6 @@ function getDayName(dateString) {
 
   return date.toLocaleDateString("en-US", { weekday: "long" });
 }
-
 // Event listeners
 function init() {
   switch (window.location.pathname) {
@@ -153,9 +210,7 @@ function init() {
       fetchWeather(city);
       fetch5DayWeather(city);
       document.querySelector("form").addEventListener("submit", searchWeather);
-      document
-        .querySelector("form")
-        .addEventListener("submit", fetch5DayWeather);
+      document.querySelector("form").addEventListener("submit", searchWeather);
   }
 }
 document.addEventListener("DOMContentLoaded", init);

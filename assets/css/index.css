@@ -55,3 +55,6 @@ form {
   padding: 1rem;
   border-radius: 8px;
 }
+.redirect-link {
+  color: transparent;
+}

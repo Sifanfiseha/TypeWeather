@@ -113,7 +113,7 @@ main > section {
 .main-content {
   width: 100%;
   height: 100%;
-  background-image: url("../image/bg/Weather=Few\ Clouds\,\ Moment=Night.png");
+  /* background-image: url("../image/bg/broken-clouds-day.svg"); */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
