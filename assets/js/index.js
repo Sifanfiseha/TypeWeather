@@ -19,4 +19,5 @@ document.querySelector("form").addEventListener("submit", (e) => {
   const city = searchInput.value;
   link.href = `./content.html?city=${encodeURIComponent(city)}`;
   console.log(city);
+  link.click();
 });
