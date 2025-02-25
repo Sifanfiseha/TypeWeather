@@ -65,26 +65,10 @@ function getCityFromUrl() {
 function init() {
   switch (global.currentPage) {
     case "/index.html":
-      document.querySelector("form").addEventListener("submit", (e) => {
-        e.preventDefault();
-        const city = searchInput.value.trim();
-        sessionStorage.setItem("city", city);
-        // if (city) {
-        //   window.location.assign(
-        //     `/content.html?city=${encodeURIComponent(city)}`
-        //   );
-        // } else {
-        //   alert("please enter a city name!");
-        // }
-        // window.location.href = "content.html";
-        link.href = `./content.html?city=${encodeURIComponent(city)}`;
-        link.click();
-        console.log("working...");
-        console.log(city);
-      });
+      console.log("home");
       break;
     case "/content.html":
-      const city = sessionStorage.getItem("city");
+      const city = getCityFromUrl();
       fetchWeather(city);
       document.querySelector("form").addEventListener("submit", searchWeather);
   }
