@@ -171,7 +171,7 @@ ul li {
   color: var(--gray-200);
   font-size: var(--fs-lg);
   border-bottom: 1px solid #22222f;
-  padding: 1rem;
+  padding: 1rem 0;
 }
 .p-bottom {
   padding-bottom: 0.8rem;
@@ -229,7 +229,10 @@ ul li span {
 .highLowTemp {
   font-weight: var(--fw-semibold);
 }
-@media (max-width: 700px) {
+.weather-stat {
+  text-align: center;
+}
+@media (max-width: 1000px) {
   main {
     grid-template-columns: 1fr;
     padding: 1rem;
@@ -267,11 +270,11 @@ ul li span {
   .weather-stat {
     display: none;
   }
-  .long {
+  /* .long {
     display: none;
-  }
+  } */
   .short {
-    display: block;
+    display: none;
   }
   .temp-detail {
     font-size: var(--fs-base);
@@ -291,6 +294,9 @@ ul li span {
   .discription,
   .highLowTemp {
     font-size: 1rem;
+  }
+  .lp {
+    font-size: 0.8rem;
   }
 }
 main {
