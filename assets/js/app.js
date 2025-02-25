@@ -1,6 +1,3 @@
-const global = {
-  currentPage: window.location.pathname,
-};
 const apiKey = "da057670b3c6e44ad17109f4e01c0748";
 const searchInput = document.querySelector("#searchInput");
 const cityName = document.querySelector(".city-name");
@@ -33,6 +30,28 @@ async function fetchWeather(city) {
     loadingEl?.classList.add("hide");
   }
 }
+async function fetch5DayWeather(city) {
+  try {
+    if (!city) throw new Error("city name is required");
+    loadingEl.classList.remove("hide");
+    const response = await fetch(
+      `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`
+    );
+    if (!response.ok) {
+      throw new Error("City not found. Please try again.");
+    }
+    const data = await response.json();
+    displayForecast(data);
+    data;
+  } catch (error) {
+    console.log(error);
+  } finally {
+    loadingEl?.classList.add("hide");
+  }
+}
+function displayForecast(data) {
+  console.log(data);
+}
 function displayCurrentWeather(data) {
   cityName.innerText = `${data.name}, ${data.sys.country}`;
   discriptionEl.innerText = data.weather[0].description;
@@ -63,15 +82,26 @@ function getCityFromUrl() {
 
 // Event listeners
 function init() {
-  switch (global.currentPage) {
+  switch (window.location.pathname) {
     case "/index.html":
       console.log("home");
+      document.querySelector("form").addEventListener("submit", (e) => {
+        e.preventDefault();
+        const city = searchInput.value;
+        link.href = `./content.html?city=${encodeURIComponent(city)}`;
+        console.log(city);
+        link.click();
+      });
+
       break;
     case "/content.html":
       const city = getCityFromUrl();
       fetchWeather(city);
+      fetch5DayWeather(city);
       document.querySelector("form").addEventListener("submit", searchWeather);
+      document
+        .querySelector("form")
+        .addEventListener("submit", fetch5DayWeather);
   }
 }
 document.addEventListener("DOMContentLoaded", init);
-console.log("working 1");
