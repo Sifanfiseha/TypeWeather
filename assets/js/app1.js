@@ -79,8 +79,11 @@ function init() {
     searchForm.addEventListener("submit", (event) => {
       event.preventDefault();
       const city = searchInput.value.trim();
+      link.location.href = `content.html?city=${encodeURIComponent(city)}`;
       if (city) {
-        window.location.href = `content.html?city=${encodeURIComponent(city)}`;
+        window.location.href = `content.html?city=adama`;
+        // link.loca/=tion.href = `content.html?city=${encodeURIComponent(city)}`;
+        link.click();
       } else {
         alert("Please enter a city name");
       }

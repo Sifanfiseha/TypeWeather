@@ -12,6 +12,8 @@ const windSpeedEl = document.querySelector(".wind-speed");
 const humidityEl = document.querySelector(".humidity");
 const uvIndexEl = document.querySelector(".uv-index");
 const highLowTempEl = document.querySelector(".highLowTemp");
+const link = document.querySelector(".redirect-link");
+
 async function fetchWeather(city) {
   try {
     if (!city) throw new Error("city name is required");
@@ -26,7 +28,7 @@ async function fetchWeather(city) {
     console.log(data);
     displayCurrentWeather(data);
   } catch (error) {
-    alert(error);
+    console.log(error);
   } finally {
     loadingEl?.classList.add("hide");
   }
@@ -74,7 +76,9 @@ function init() {
         // } else {
         //   alert("please enter a city name!");
         // }
-        window.location.href = "content.html";
+        // window.location.href = "content.html";
+        link.href = `./content.html?city=${encodeURIComponent(city)}`;
+        link.click();
       });
       break;
     case "/content.html":
