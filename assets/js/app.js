@@ -73,7 +73,6 @@ async function fetchWeather(city) {
       throw new Error("City not found. Please try again.");
     }
     const data = await response.json();
-    console.log(data);
     displayCurrentWeather(data);
   } catch (error) {
     console.log(error);
@@ -101,7 +100,6 @@ async function fetch5DayWeather(city) {
   }
 }
 function displayForecast(data) {
-  console.log(data);
   const week = document.querySelector(".container");
   week.innerHTML = "";
   data.forEach((day) => {
