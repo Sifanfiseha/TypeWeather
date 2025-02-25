@@ -85,14 +85,6 @@ function init() {
   switch (window.location.pathname) {
     case "/index.html":
       console.log("home");
-      document.querySelector("form").addEventListener("submit", (e) => {
-        e.preventDefault();
-        const city = searchInput.value;
-        link.href = `./content.html?city=${encodeURIComponent(city)}`;
-        console.log(city);
-        link.click();
-      });
-
       break;
     case "/content.html":
       const city = getCityFromUrl();
