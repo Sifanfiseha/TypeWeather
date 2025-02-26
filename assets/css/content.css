@@ -302,3 +302,40 @@ ul li span {
 main {
   padding: 0.8rem;
 }
+.suggestions {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5rem;
+  position: relative;
+}
+form {
+  margin: 0 auto;
+}
+.suggestions ul {
+  position: absolute;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 571px;
+  list-style: none;
+  padding: 0;
+  top: 60px;
+  /* margin: 0; */
+}
+.suggestions ul li {
+  width: 100%;
+  background-color: var(--gray-700);
+  color: var(--gray-100);
+  padding: 1rem;
+  border-radius: 8px;
+  color: var(--gray-200);
+  font-size: 1rem;
+  transition: 100ms ease;
+  margin-bottom: 0.1rem;
+}
+.suggestions ul li:hover {
+  /* background-color: #3131487f; */
+  color: var(--gray-100);
+}

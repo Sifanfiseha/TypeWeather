@@ -45,23 +45,27 @@
         <h1>Welcome to <span>TypeWeather</span></h1>
         <h3>Choose a location to see the weather forecast</h3>
       </div>
-      <form action="">
-        <input
-          type="text"
-          id="searchInput"
-          autocomplete="off"
-          placeholder="Enter city name"
-        />
-        <img src="./assets/image/weather icon/" alt="" />
-        <img
-          class="loading hide"
-          src="assets/font/Animation - 1740281726244.gif"
-          alt="loading Animation"
-        />
-        <button id="searchButton" class="searchButtonIndex">
-          <ion-icon class="ion-icon" name="search-outline"></ion-icon>
-        </button>
-      </form>
+      <div class="suggestions">
+        <form action="">
+          <input
+            type="text"
+            id="searchInput"
+            autocomplete="off"
+            placeholder="Enter city name"
+          />
+          <img src="./assets/image/weather icon/" alt="" />
+
+          <img
+            class="loading hide"
+            src="assets/font/Animation - 1740281726244.gif"
+            alt="loading Animation"
+          />
+          <button id="searchButton" class="searchButtonIndex">
+            <ion-icon class="ion-icon" name="search-outline"></ion-icon>
+          </button>
+        </form>
+        <ul></ul>
+      </div>
       <a class="redirect-link" href="#">link</a>
     </main>
     <script
