@@ -79,6 +79,8 @@ async function fetchWeather(city) {
     console.log(error);
   } finally {
     loadingEl?.classList.add("hide");
+    suggestionsEl.innerHTML = "";
+    searchInput.value = "";
   }
 }
 async function fetch5DayWeather(city) {
@@ -98,6 +100,8 @@ async function fetch5DayWeather(city) {
     console.log(error);
   } finally {
     loadingEl?.classList.add("hide");
+    suggestionsEl.innerHTML = "";
+    searchInput.value = "";
   }
 }
 function displayForecast(data) {
@@ -254,6 +258,7 @@ function selectCity(city) {
     fetchWeather(city);
     fetch5DayWeather(city);
     suggestionsEl.innerHTML = "";
+    searchInput.value = "";
   } else {
     alert("Please enter a city name");
   }
