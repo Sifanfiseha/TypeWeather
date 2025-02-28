@@ -10,7 +10,6 @@ A sleek and dynamic weather dashboard that provides real-time weather updates an
 - **☀️ Real-Time Weather** – Current temperature, humidity, wind speed, UV index & more
 - **📅 5-Day Forecast** – Hourly and daily weather updates
 - **🎨 Dynamic Backgrounds** – Changes based on weather conditions
-- **🌡️ Unit Toggle** – Switch between °C and °F
 - **📱 Responsive Design** – Works on all screen sizes
 - **⚡ Live Data Updates** – Auto-refreshes every 15 minutes
 
